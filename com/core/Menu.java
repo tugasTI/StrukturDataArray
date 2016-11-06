@@ -7,6 +7,7 @@ public class Menu{
   public static int submenu;
   public static int subsubmenu;
   public static String kodeBarangTertentu;
+  public static int hargaTertentu;
 
   public static void on(){
     Screen screen = new Screen();
@@ -37,7 +38,6 @@ public class Menu{
     System.out.println("3. Nama");
     System.out.println("4. Distributor");
     System.out.println("5. Harga");
-    System.out.println("7. Semua Informasi");
     System.out.println("6. Kembali");
     System.out.print("Pilihan Anda (1-6) : ");
     java.util.Scanner scan = new java.util.Scanner(System.in);
@@ -50,7 +50,7 @@ public class Menu{
     screen.clear();
 
     System.out.println("**DATA BARANG KELONTONG**");
-    System.out.println("Menu 2.2 (Menampilkan Data Berdasarkan Kode) :");
+    System.out.println("Menu 2.2 (Menampilkan Data Kode Barang) :");
     System.out.println("1. Semua ");
     System.out.println("2. Kode tertentu");
     System.out.println("3. Kembali");
@@ -63,7 +63,7 @@ public class Menu{
     screen.clear();
 
     System.out.println("**DATA BARANG KELONTONG**");
-    System.out.println("Menu 2.2.2 (Menampilkan Data Berdasarkan Kode Tertentu) :");
+    System.out.println("Menu 2.2.2 (Menampilkan Data Kode Barang Tertentu) :");
     System.out.print("Masukkan Kode Barang : ");
     java.util.Scanner scan = new java.util.Scanner(System.in);
     kodeBarangTertentu = scan.next();
@@ -75,7 +75,7 @@ public class Menu{
     screen.clear();
 
     System.out.println("**DATA BARANG KELONTONG**");
-    System.out.println("Menu 2.2 (Menampilkan Data Berdasarkan Nama) :");
+    System.out.println("Menu 2.3 (Menampilkan Data Nama Barang) :");
     System.out.println("1. Semua ");
     System.out.println("2. Nama tertentu");
     System.out.println("3. Kembali");
@@ -88,9 +88,59 @@ public class Menu{
     screen.clear();
 
     System.out.println("**DATA BARANG KELONTONG**");
-    System.out.println("Menu 2.2.2 (Menampilkan Data Berdasarkan Nama Tertentu) :");
+    System.out.println("Menu 2.3.2 (Menampilkan Data Nama Barang Tertentu) :");
     System.out.print("Masukkan Nama Barang : ");
     java.util.Scanner scan = new java.util.Scanner(System.in);
     kodeBarangTertentu = scan.next();
+  }
+
+  // Distributor
+  public static void menuTampilDist(){
+    Screen screen = new Screen();
+    screen.clear();
+
+    System.out.println("**DATA BARANG KELONTONG**");
+    System.out.println("Menu 2.4 (Menampilkan Data Distributor Barang) :");
+    System.out.println("1. Semua ");
+    System.out.println("2. Distributor tertentu");
+    System.out.println("3. Kembali");
+    System.out.print("Pilihan Anda (1-3) : ");
+    java.util.Scanner scan = new java.util.Scanner(System.in);
+    subsubmenu = scan.nextInt();
+  }
+  public static void menuTampilDistTertentu(){
+    Screen screen = new Screen();
+    screen.clear();
+
+    System.out.println("**DATA BARANG KELONTONG**");
+    System.out.println("Menu 2.4.2 (Menampilkan Data Distributor Barang Tertentu) :");
+    System.out.print("Masukkan Nama Distributor : ");
+    java.util.Scanner scan = new java.util.Scanner(System.in);
+    kodeBarangTertentu = scan.next();
+  }
+
+  // Harga
+  public static void menuTampilHarga(){
+    Screen screen = new Screen();
+    screen.clear();
+
+    System.out.println("**DATA BARANG KELONTONG**");
+    System.out.println("Menu 2.5 (Menampilkan Data Harga Barang) :");
+    System.out.println("1. Semua ");
+    System.out.println("2. Harga tertentu");
+    System.out.println("3. Kembali");
+    System.out.print("Pilihan Anda (1-3) : ");
+    java.util.Scanner scan = new java.util.Scanner(System.in);
+    subsubmenu = scan.nextInt();
+  }
+  public static void menuTampilHargaTertentu(){
+    Screen screen = new Screen();
+    screen.clear();
+
+    System.out.println("**DATA BARANG KELONTONG**");
+    System.out.println("Menu 2.5.2 (Menampilkan Data Harga Barang Tertentu) :");
+    System.out.print("Masukkan Harga Barang : ");
+    java.util.Scanner scan = new java.util.Scanner(System.in);
+    hargaTertentu = scan.nextInt();
   }
 }

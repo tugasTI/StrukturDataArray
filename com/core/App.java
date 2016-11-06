@@ -44,9 +44,9 @@ public class App{
 
             data[N] = new Data();
 
-            System.out.print("Kode Barang : "); data[N].kodeBarang = scan.next();
-            System.out.print("Nama Barang : "); data[N].namaBarang = scan.next();
-            System.out.print("Distributor : "); data[N].distributor= scan.next();
+            System.out.print("Kode Barang : "); data[N].kodeBarang = scan.nextLine();
+            System.out.print("Nama Barang : "); data[N].namaBarang = scan.nextLine();
+            System.out.print("Distributor : "); data[N].distributor= scan.nextLine();
             System.out.print("Harga (Rp)  : "); data[N].harga      = scan.nextLong();
 
 
@@ -95,7 +95,36 @@ public class App{
                 }while(pil.subsubmenu != 3);
                 break;
               case 4:
-                tampil.distSemua(data, N);
+                do{
+                    pil.menuTampilDist();
+                    switch(pil.subsubmenu){
+                      case 1:
+                        tampil.distSemua(data, N);
+                        break;
+                      case 2:
+                        pil.menuTampilDistTertentu();
+                        tampil.distTertentu(data, N, pil.kodeBarangTertentu);
+                        break;
+                      default:
+                        error.salahMenu(pil.subsubmenu);
+                    }
+                }while(pil.subsubmenu != 3);
+                break;
+              case 5:
+                do{
+                    pil.menuTampilHarga();
+                    switch(pil.subsubmenu){
+                      case 1:
+                        tampil.hargaSemua(data, N);
+                        break;
+                      case 2:
+                        pil.menuTampilHargaTertentu();
+                        tampil.hargaTertentu(data, N, pil.hargaTertentu);
+                        break;
+                      default:
+                        error.salahMenu(pil.subsubmenu);
+                    }
+                }while(pil.subsubmenu != 3);
                 break;
               case 6:
                 break;
