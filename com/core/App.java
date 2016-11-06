@@ -43,15 +43,28 @@ public class App{
             System.out.println("Input Data Ke-"+(N+1)+" :");
 
             data[N] = new Data();
+            
+            System.out.print("Kode Barang : "); String[] bufKode = scan.nextLine().split(" ");
+            data[N].kodeBarang = "";
+            for(int i = 0; i < bufKode.length; i++) data[N].kodeBarang += bufKode[i] + " ";
+            // scan.nextLine();
+            
+            System.out.print("Nama Barang : "); String[] bufNama = scan.nextLine().split(" ");
+            data[N].namaBarang = "";
+            for(int i = 0; i < bufKode.length; i++) data[N].namaBarang += bufNama[i] + " ";
+            // scan.nextLine();
 
-            System.out.print("Kode Barang : "); data[N].kodeBarang = scan.nextLine();
-            System.out.print("Nama Barang : "); data[N].namaBarang = scan.nextLine();
-            System.out.print("Distributor : "); data[N].distributor= scan.nextLine();
+            System.out.print("Distributor : "); String[] bufDist = scan.nextLine().split(" ");
+            data[N].distributor = "";
+            for(int i = 0; i < bufDist.length; i++) data[N].distributor += bufDist[i] + " ";
+            // scan.nextLine();
+
             System.out.print("Harga (Rp)  : "); data[N].harga      = scan.nextLong();
-
+            // scan.nextLine();
 
             System.out.print("Masukkan data lagi? (y/t) ");
             ulang = scan.next().charAt(0);
+            scan.nextLine();
             N++;
           }while(ulang == 'y');
           break;
@@ -139,6 +152,7 @@ public class App{
         case 6: // 6. Menghapus Data
         case 7: // 7. Mengurutkan Data
         case 8: // 8. Keluar
+          System.out.println("Program selesai.");
           System.exit(0);
         default:
         error.salahMenu(pil.menu);
