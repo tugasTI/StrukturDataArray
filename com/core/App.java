@@ -23,6 +23,9 @@ public class App{
     //Pengaturan layar
     Screen screen = new Screen();
 
+    //input data
+    Input in   = new Input();
+
     //tampil data
     Tampil tampil = new Tampil();
 
@@ -37,31 +40,15 @@ public class App{
         case 1: //1. Input Data
           screen.clear();
           char ulang;
-          N=0;
-          System.out.println("**DATA BARANG KELONTONG**");
+          System.out.print("**DATA BARANG KELONTONG**");
+          scan.nextLine();
           do{
-            System.out.println("Input Data Ke-"+(N+1)+" :");
-
             data[N] = new Data();
-            
-            System.out.print("Kode Barang : "); String[] bufKode = scan.nextLine().split(" ");
-            data[N].kodeBarang = "";
-            for(int i = 0; i < bufKode.length; i++) data[N].kodeBarang += bufKode[i] + " ";
-            // scan.nextLine();
-            
-            System.out.print("Nama Barang : "); String[] bufNama = scan.nextLine().split(" ");
-            data[N].namaBarang = "";
-            for(int i = 0; i < bufKode.length; i++) data[N].namaBarang += bufNama[i] + " ";
-            // scan.nextLine();
-
-            System.out.print("Distributor : "); String[] bufDist = scan.nextLine().split(" ");
-            data[N].distributor = "";
-            for(int i = 0; i < bufDist.length; i++) data[N].distributor += bufDist[i] + " ";
-            // scan.nextLine();
-
-            System.out.print("Harga (Rp)  : "); data[N].harga      = scan.nextLong();
-            // scan.nextLine();
-
+            System.out.println("Input Data Ke-"+(N+1)+" :");
+            data[N].kodeBarang  = in.kode();
+            data[N].namaBarang  = in.nama();
+            data[N].distributor = in.dist();
+            data[N].harga       = in.harga();
             System.out.print("Masukkan data lagi? (y/t) ");
             ulang = scan.next().charAt(0);
             scan.nextLine();
@@ -104,6 +91,7 @@ public class App{
                         break;
                       default:
                         error.salahMenu(pil.subsubmenu);
+                        scan.nextLine();
                     }
                 }while(pil.subsubmenu != 3);
                 break;
@@ -120,6 +108,7 @@ public class App{
                         break;
                       default:
                         error.salahMenu(pil.subsubmenu);
+                        scan.nextLine();
                     }
                 }while(pil.subsubmenu != 3);
                 break;
@@ -136,17 +125,65 @@ public class App{
                         break;
                       default:
                         error.salahMenu(pil.subsubmenu);
+                        scan.nextLine();
                     }
                 }while(pil.subsubmenu != 3);
                 break;
               case 6:
                 break;
               default:
-
+                error.salahMenu(pil.submenu);
+                scan.nextLine();
             }
           }while(pil.submenu != 6);
           break;
         case 3: // 3. Menambah Data
+          do{
+            pil.menuTambah();
+            switch(pil.submenu){
+              case 1: // 3.1 Depan
+                do{
+                    switch(pil.subsubmenu){
+                      case 1:break;
+                      case 2:break;
+                      default:
+                        error.salahMenu(pil.subsubmenu);
+                        scan.nextLine();
+                    }
+                }while(pil.subsubmenu != 3);
+                break;
+              case 2: // 3.2 Tengah
+                do{
+                    switch(pil.subsubmenu){
+                      case 1:break;
+                      case 2:break;
+                      default:
+                        error.salahMenu(pil.subsubmenu);
+                        scan.nextLine();
+                    }
+                }while(pil.subsubmenu != 3);
+                break;
+              case 3: // 3.3 Belakang
+                System.out.println(N);
+                data[N+1]             = new Data();
+                data[N+1].kodeBarang  = in.kode();
+                data[N+1].namaBarang  = in.nama();
+                data[N+1].distributor = in.dist();
+                data[N+1].harga       = in.harga();
+
+                System.out.println(data[N+1].kodeBarang);
+                System.out.println(data[N+1].namaBarang);
+                System.out.println(data[N+1].distributor);
+                System.out.println(data[N+1].harga);
+                break;
+              case 4:
+                break;
+              default:
+                error.salahMenu(pil.submenu);
+                scan.nextLine();
+            }
+          }while(pil.submenu != 4);
+          break;
         case 4: // 4. Mencari Data
         case 5: // 5. Mengedit Data
         case 6: // 6. Menghapus Data
@@ -156,6 +193,8 @@ public class App{
           System.exit(0);
         default:
         error.salahMenu(pil.menu);
+        scan.nextLine();
+
       }
     }while(pil.menu != 8);
   }

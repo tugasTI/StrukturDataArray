@@ -143,4 +143,20 @@ public class Menu{
     java.util.Scanner scan = new java.util.Scanner(System.in);
     hargaTertentu = scan.nextInt();
   }
+
+  // Menu Tambah
+  public static void menuTambah(){
+    Screen screen = new Screen();
+    screen.clear();
+
+    System.out.println("**DATA BARANG KELONTONG**");
+    System.out.println("Menu 3 (Menambah Data) :");
+    System.out.println("1. Di Depan ");
+    System.out.println("2. Di Tengah");
+    System.out.println("3. Di Belakang");
+    System.out.println("4. Kembali");
+    System.out.print("Pilihan Anda (1-4) : ");
+    java.util.Scanner scan = new java.util.Scanner(System.in);
+    submenu = scan.nextInt();
+  }
 }
