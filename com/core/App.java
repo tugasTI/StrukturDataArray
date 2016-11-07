@@ -148,7 +148,7 @@ public class App{
             switch(pil.submenu){
               case 1: // 3.1 Depan
                 data[N]   = new Data();
-                for(int i = 0; i < N; i++){
+                for(int i = N-1; i >= 0; i--){
                   data[i+1] = data[i];
                 }
                 data[0]  = add.depan();
@@ -177,7 +177,11 @@ public class App{
           }while(pil.submenu != 4);
           break;
         case 4: // 4. Mencari Data
-          cari.run(data, N);
+          String q;
+          System.out.print("Masukkan query pencarian (mis: kode=123): ");
+          q   = scan.next();
+          cari.run(data, q, N);
+          screen.pause();
           break;
         case 5: // 5. Mengedit Data
         case 6: // 6. Menghapus Data
