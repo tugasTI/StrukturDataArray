@@ -29,6 +29,9 @@ public class App{
     //tampil data
     Tampil tampil = new Tampil();
 
+    // tambah data
+    Tambah add  = new Tambah();
+
     do{
       //bersihkan layar
       screen.clear();
@@ -41,7 +44,6 @@ public class App{
           screen.clear();
           char ulang;
           System.out.print("**DATA BARANG KELONTONG**");
-          scan.nextLine();
           do{
             data[N] = new Data();
             System.out.println("Input Data Ke-"+(N+1)+" :");
@@ -51,7 +53,6 @@ public class App{
             data[N].harga       = in.harga();
             System.out.print("Masukkan data lagi? (y/t) ");
             ulang = scan.next().charAt(0);
-            scan.nextLine();
             N++;
           }while(ulang == 'y');
           break;
@@ -75,6 +76,7 @@ public class App{
                         break;
                       default:
                         error.salahMenu(pil.subsubmenu);
+                        scan.nextLine();
                     }
                 }while(pil.subsubmenu != 3);
                 break;
@@ -142,45 +144,24 @@ public class App{
             pil.menuTambah();
             switch(pil.submenu){
               case 1: // 3.1 Depan
-                do{
-                    switch(pil.subsubmenu){
-                      case 1:break;
-                      case 2:break;
-                      default:
-                        error.salahMenu(pil.subsubmenu);
-                        scan.nextLine();
-                    }
-                }while(pil.subsubmenu != 3);
+                data[N]   = new Data();
+                for(int i = 0; i < N; i++){
+                  data[i+1] = data[i];
+                }
+                data[0]  = add.depan();
+                N++;
                 break;
               case 2: // 3.2 Tengah
-                do{
-                    switch(pil.subsubmenu){
-                      case 1:break;
-                      case 2:break;
-                      default:
-                        error.salahMenu(pil.subsubmenu);
-                        scan.nextLine();
-                    }
-                }while(pil.subsubmenu != 3);
                 break;
               case 3: // 3.3 Belakang
-                System.out.println(N);
-                data[N+1]             = new Data();
-                data[N+1].kodeBarang  = in.kode();
-                data[N+1].namaBarang  = in.nama();
-                data[N+1].distributor = in.dist();
-                data[N+1].harga       = in.harga();
-
-                System.out.println(data[N+1].kodeBarang);
-                System.out.println(data[N+1].namaBarang);
-                System.out.println(data[N+1].distributor);
-                System.out.println(data[N+1].harga);
+                data[N]   = new Data();
+                data[N]   = add.belakang();
+                N++;
                 break;
               case 4:
                 break;
               default:
                 error.salahMenu(pil.submenu);
-                scan.nextLine();
             }
           }while(pil.submenu != 4);
           break;
