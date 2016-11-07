@@ -32,6 +32,9 @@ public class App{
     // tambah data
     Tambah add  = new Tambah();
 
+    // cari data
+    Cari cari   = new Cari();
+
     do{
       //bersihkan layar
       screen.clear();
@@ -152,6 +155,14 @@ public class App{
                 N++;
                 break;
               case 2: // 3.2 Tengah
+                data[N]   = new Data();
+                System.out.print("Masukkan data pada urutan ke: ");
+                int posisi = scan.nextInt();
+                for (int i=posisi-1; i<N; i++) {
+                  data[i+1] = data[i];
+                }
+                data[posisi-1]  = add.tengah();
+                N++;
                 break;
               case 3: // 3.3 Belakang
                 data[N]   = new Data();
@@ -166,6 +177,8 @@ public class App{
           }while(pil.submenu != 4);
           break;
         case 4: // 4. Mencari Data
+          cari.run(data, N);
+          break;
         case 5: // 5. Mengedit Data
         case 6: // 6. Menghapus Data
         case 7: // 7. Mengurutkan Data
