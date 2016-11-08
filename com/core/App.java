@@ -35,6 +35,12 @@ public class App{
     // cari data
     Cari cari   = new Cari();
 
+    // edit data
+    Edit edit   = new Edit();
+
+    // delete data
+    Delete hapus  = new Delete();
+
     do{
       //bersihkan layar
       screen.clear();
@@ -46,7 +52,7 @@ public class App{
         case 1: //1. Input Data
           screen.clear();
           char ulang;
-          System.out.print("**DATA BARANG KELONTONG**");
+          System.out.println("**DATA BARANG KELONTONG**");
           do{
             data[N] = new Data();
             System.out.println("Input Data Ke-"+(N+1)+" :");
@@ -178,13 +184,29 @@ public class App{
           break;
         case 4: // 4. Mencari Data
           String q;
-          System.out.print("Masukkan query pencarian (mis: kode=123): ");
+          System.out.print("Query pencarian (mis: kode=123): ");
           q   = scan.next();
           cari.run(data, q, N);
           screen.pause();
           break;
         case 5: // 5. Mengedit Data
+          String qc;
+          String qe;
+          System.out.print("Cari data yang akan diedit (mis: kode=123): ");
+          qc  = scan.next();
+          System.out.print("Query data yang diedit (mis: kode=123)    : ");
+          qe  = scan.next();
+          edit.run(data, N, qc, qe);
+          screen.pause();
+          break;
         case 6: // 6. Menghapus Data
+          int index;
+          System.out.print("Masukkan urutan data yang akan dihapus : ");
+          index  = scan.nextInt() - 1;
+          data = hapus.run(data, N, index);
+          N = hapus.Nd;
+          screen.pause();
+          break;
         case 7: // 7. Mengurutkan Data
         case 8: // 8. Keluar
           System.out.println("Program selesai.");

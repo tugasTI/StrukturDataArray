@@ -1,6 +1,6 @@
 all:
-	$(MAKE) com.core
 	$(MAKE) com.data
+	$(MAKE) com.core
 	javac ./Main.java
 	java Main
 
