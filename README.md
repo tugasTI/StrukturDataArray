@@ -2,7 +2,7 @@
 Tugas struktur data semester III, tema barang kelontong.
 Membuat program komputer untuk memanajemen data pada suatu domain.
 
-# Kompilasi
+## Kompilasi
 1. Masuk pada direktori utama (terdapat file Main.java dan Main.class)
 2. Buka CMD/terminal dan masuk ke direktori utama, kemudian ketikkan:
     a. javac com/data/*.java
@@ -10,29 +10,47 @@ Membuat program komputer untuk memanajemen data pada suatu domain.
     c. javac Main.java
 3. Atau dengan menginstal "make", kemudian ketikkan "make all"
 
-# Running
+## Running
 1. Masuk pada direktori utama (terdapat file Main.java dan Main.class)
 2. Buka CMD/terminal dan masuk ke direktori utama, kemudian ketikkan:
     java Main
     
-# Penggunaan
+## Penggunaan
 1. Pastikan melakukan input data ketika pertama kali running program.
 2. Query pencarian dan edit data:
-    Penggunaan:
-      <nama field>=<nilai yang dicari>
-    Mis:
+
+Penggunaan:
+
+    <nama field>=<nilai yang dicari>
+   
+Mis:
+
       kode=abc
+      
       nama=ember
+      
     Nama Field:
+    
       kode    Mencari berdasarkan kode
+      
       nama    Mencari berdasarkan nama
+      
       dist    Mencari berdasarkan distributor
+      
       harga   Mencari berdasarkan harga
+      
 3. Query urutkan data:
+
     Penggunaan:
+    
       <nama field>><jenis pengurutan>
+      
     Mis:
+    
       kode>asc
+      
       nama>desc
+      
     Nama Field:
-      Sama dengan fiel yang ada pada pencarian
+    
+      Sama dengan field yang ada pada pencarian
