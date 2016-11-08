@@ -19,17 +19,17 @@ Membuat program komputer untuk memanajemen data pada suatu domain.
 1. Pastikan melakukan input data ketika pertama kali running program.
 2. Query pencarian dan edit data:
 
-Penggunaan:
+    ### Penggunaan:
 
-    <nama field>=<nilai yang dicari>
+        <nama field>=<nilai yang dicari>
    
-Mis:
+    ### Mis:
 
       kode=abc
       
       nama=ember
       
-    Nama Field:
+    ### Nama Field:
     
       kode    Mencari berdasarkan kode
       
@@ -41,16 +41,16 @@ Mis:
       
 3. Query urutkan data:
 
-    Penggunaan:
-    
-      <nama field>><jenis pengurutan>
+    ### Penggunaan:
+        
+        <nama field>><jenis pengurutan>
       
-    Mis:
+    ### Mis:
     
       kode>asc
       
       nama>desc
       
-    Nama Field:
+    ### Nama Field:
     
       Sama dengan field yang ada pada pencarian
