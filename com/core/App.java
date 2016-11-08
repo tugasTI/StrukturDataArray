@@ -41,6 +41,9 @@ public class App{
     // delete data
     Delete hapus  = new Delete();
 
+    // pengurutan data
+    Sort urutbukanpijat   = new Sort();
+
     do{
       //bersihkan layar
       screen.clear();
@@ -208,6 +211,12 @@ public class App{
           screen.pause();
           break;
         case 7: // 7. Mengurutkan Data
+          String qs;
+          System.out.print("Query pengurutan (mis: kode>asc)    : ");
+          qs = scan.next();
+          data = urutbukanpijat.run(data, N, qs);
+          screen.pause();
+          break;
         case 8: // 8. Keluar
           System.out.println("Program selesai.");
           System.exit(0);

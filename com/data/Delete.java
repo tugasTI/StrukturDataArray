@@ -5,7 +5,6 @@ public class Delete{
 	public static int Nd;
 	public static Data[] run(Data[] data, int N, int index){
 		for(int i = index; i < N-1; i++){
-			System.out.println(i);
 			data[i] = data[i+1];
 		}
 		N--;

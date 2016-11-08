@@ -49,6 +49,9 @@ public class Cari{
 
 		if(C>0){
 			for(int i=0; i<C; i++){
+				System.out.println("===========================================================================");
+			    System.out.println("NO\tKode Barang\tNama Barang\tDistributor\t\tHarga");
+			    System.out.println("---------------------------------------------------------------------------");
 				System.out.println((i+1)+"\t"+hsl[i].kodeBarang+"\t\t"+hsl[i].namaBarang+"\t\t"+hsl[i].distributor+"\t\t"+hsl[i].harga);
 			}
 		}else{
